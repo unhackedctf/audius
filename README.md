@@ -22,7 +22,7 @@ your job is to use this knowledge, dig into the code, and empty the treasury of 
 
 2. add a mainnet RPC url into `test/AudiusHack.t.sol` so that the tests are able to fork mainnet from block 15201700.
 
-3. review the code in the `src/` folder, which contains all the code at the time of the hack. you can explore the state of the contract before the hack using block 15201700. ex: `cast call --rpc-url ${ETH_RPC_URL} --block 15201700 0x4DEcA517D6817B6510798b7328F2314d3003AbAC "getGuardianAddress()" | cast 2d`
+3. review the code in the `src/` folder, which contains all the code at the time of the hack. you can explore the state of the contract before the hack using block 15201700. ex: `cast call --rpc-url ${ETH_RPC_URL} --block 15201700 0x4DEcA517D6817B6510798b7328F2314d3003AbAC "getGuardianAddress()"`
 
 4. when you find an exploit, code it up in `AudiusHack.t.sol`. the test will pass if you succeed.
 
