@@ -24,11 +24,9 @@ your job is to use this knowledge, dig into the code, and empty the treasury of 
 
 3. review the code in the `src/` folder, which contains all the code at the time of the hack. you can explore the state of the contract before the hack using block 15201700. ex: `cast call --rpc-url ${ETH_RPC_URL} --block 15201700 0x4DEcA517D6817B6510798b7328F2314d3003AbAC "getGuardianAddress()" | cast 2d`
 
-4. if you get stuck, there are a few helpful resources. first, try [reading this post mortem from the audius team](https://blog.audius.co/article/audius-governance-takeover-post-mortem-7-23-22). if you need more hints, check out the [audius exploiter's history on etherscan](https://etherscan.io/address/0xa0c7bd318d69424603cbf91e9969870f21b8ab4c) (you may want to try decompiling the bytecode of the contracts they deployed).
+4. when you find an exploit, code it up in `AudiusHack.t.sol`. the test will pass if you succeed.
 
-5. when you find an exploit, code it up in `AudiusHack.t.sol`. the test will pass if you succeed.
-
-6. post on twitter for bragging rights and tag [@unhackedctf](http://twitter.com/unhackedctf). first correct answer gets a spot on the leaderboard. no cheating.
+5. post on twitter for bragging rights and tag [@unhackedctf](http://twitter.com/unhackedctf). first correct answer gets a spot on the leaderboard. no cheating.
 
 ## subscribe
 
