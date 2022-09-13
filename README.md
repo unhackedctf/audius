@@ -12,6 +12,8 @@ in july, they were hacked and their treasury was emptied of all its $AUDIO token
 
 the simple soundbite is that there was a storage slot collision with a proxy contract that allowed reinitialization of existing contracts. 
 
+since all of the contracts are behind a proxy, this collision meant that the initialize() function of all contracts could be called any time.
+
 but how can we exploit this vulnerability to drain the treasury?
 
 your job is to use this knowledge, dig into the code, and empty the treasury of over 18mm $AUDIO tokens before the blackhat does.
