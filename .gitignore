@@ -10,4 +10,4 @@ out/
 # Files that include solution
 test/AudiusHackSolution.t.sol
 test/FranFranSolution.t.sol
-test.TofunmiSolution.t.sol
+test/TofSolution.t.sol
