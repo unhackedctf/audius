@@ -30,7 +30,7 @@ contract ContractTest is DSTest {
     }
 
     function testTofunmiHack() public {
-        vm.createSelectFork("https://mainnet.infura.io/v3/324422b5714843da8a919967a9c652ac", 15201700);
+        vm.createSelectFork("INSERT RPC URL HERE", 15201700);
         console.log("Audius Balance: ", token.balanceOf(address(this)));
 
         // HACK AWAY! (Don't forget you can use vm.roll(newBlock) to simulate multiple blocks)

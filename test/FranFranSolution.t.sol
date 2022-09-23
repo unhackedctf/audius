@@ -30,7 +30,7 @@ contract ContractTest is DSTest {
     }
 
     function testAudiusHack() public {
-        vm.createSelectFork(vm.envString("ETH_RPC_URL"), 15201700);
+        vm.createSelectFork("INSERT RPC URL HERE", 15201700);
         console.log("Audius Balance: ", token.balanceOf(address(this)));
 
         // HACK AWAY! (Don't forget you can use vm.roll(newBlock) to simulate multiple blocks)
