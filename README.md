@@ -32,7 +32,7 @@ your job is to use this knowledge, dig into the code, and empty the treasury of 
 
 ## solution
 
-this contest is no longer live. (you can read a write up of the solution here)[https://unhackedctf.substack.com/p/audius-walkthrough-challenge-3] or find the solution code in the `test` folder.
+this contest is no longer live. [you can read a write up of the solution here](https://unhackedctf.substack.com/p/audius-walkthrough-challenge-3) or find the solution code in the `test` folder.
 
 ## subscribe
 
