@@ -14,6 +14,11 @@ pragma solidity >=0.4.24 <0.7.0;
  * because this is not dealt with automatically as with constructors.
  */
  contract Initializable {
+  address public proxyAdmin;
+    
+  uint256 private filler1;
+  uint256 private filler2;
+
   /**
    * @dev Indicates that the contract has been initialized.
    */
