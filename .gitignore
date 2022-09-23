@@ -8,6 +8,6 @@ out/
 /broadcast/*/31337/
 
 # Files that include solution
-test/AudiusHackSolution.t.sol
-test/FranFranSolution.t.sol
-test/TofSolution.t.sol
+# test/AudiusHackSolution.t.sol
+# test/FranFranSolution.t.sol
+# test/TofSolution.t.sol
