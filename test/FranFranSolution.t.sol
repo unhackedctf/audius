@@ -29,7 +29,7 @@
 //         token = AudiusToken(0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998);
 //     }
 
-//     function testAudiusHack() public {
+//     function testFranFranHack() public {
 //         vm.createSelectFork("INSERT RPC URL HERE", 15201700);
 //         console.log("Audius Balance: ", token.balanceOf(address(this)));
 
